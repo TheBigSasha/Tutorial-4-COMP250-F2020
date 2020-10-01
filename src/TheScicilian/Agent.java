@@ -1,5 +1,7 @@
 package TheScicilian;
 
+
+
 public class Agent extends Client{
 
     public Agent(String name, long money) {

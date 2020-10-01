@@ -60,6 +60,11 @@ public class ListOfLinks<E> {
 
     public void add(E data) {                                    //sets head if head is null, else adds a node'
         ListNode<E> newNode = new ListNode<>(data);         // We create a new node from the data we are given
+        if(this.isEmpty() || this.head == null){
+            this.head = newNode;
+            size++;
+            return;
+        }
         getLastNode().setNext(newNode);                     // We go to the last node and change the reference from null to the new node
         size++;                                             // We track our size
     }
@@ -84,7 +89,15 @@ public class ListOfLinks<E> {
 
     public String toString() {
         //Print all the stuff in this list, comma separated!
+        if(this.isEmpty()) return "";               //This caused a crash because we did not consider null when pritning
+        StringBuilder sb = new StringBuilder();     //We create a mutable string
+        ListNode<E> temp = head;                    //We set our reference to head
+        while(temp != null){                        //We loop through
+            sb.append(temp.data.toString() + ", ");
+            temp = temp.next;
 
+        }
+        return sb.toString();                              //return our thing
     }
 
 

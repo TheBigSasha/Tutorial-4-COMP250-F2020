@@ -48,7 +48,7 @@ public class Client {
             throw new NotEnoughMoneyException();
         }
 
-       inventory.add(p);
+        inventory.add(p);
 
         money -= p.getCost();
 
@@ -66,7 +66,7 @@ public class Client {
 
     public String toString() {
 //TODO: This method!
-        String s = this.name + "\nMoney: " + money + "\nHealth: " + health + "\nInventory: " + inventory.toString();
+        String s = this.name + "\nMoney: " + money + "\nHealth: " + health + "\nInventory: " + inventory;
         return s;
     }
 
